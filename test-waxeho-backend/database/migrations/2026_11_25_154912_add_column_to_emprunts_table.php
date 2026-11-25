@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('membres', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('emprunts', function (Blueprint $table) {
+            $table->string("status")->default("en_cours");
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('membres');
+        Schema::table('emprunts', function (Blueprint $table) {
+            //
+        });
     }
 };

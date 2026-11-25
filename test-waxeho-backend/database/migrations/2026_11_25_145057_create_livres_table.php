@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("titre");
             $table->foreignId("auteur")->constrained("membres" , "id");
             $table->string("isbn")->unique();
-            $table->integer("nbr_exemplaires")->unique();
+            $table->integer("nbr_exemplaires")->nullable();
             $table->timestamps();
         });
     }
